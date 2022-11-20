@@ -1,143 +1,157 @@
-1. Title of Database: Restaurant & consumer data, recommender systems domain
+SUMMARY & USAGE LICENSE
+=============================================
 
-2. Sources:
-   (a) Creators: 
-Rafael Ponce Medellín and Juan Gabriel González Serna
-rafaponce@cenidet.edu.mx, gabriel@cenidet.edu.mx
-Department of Computer Science.
-National Center for Research and Technological Development CENIDET, México
-   (b) Donors of database:
-Blanca Vargas-Govea and Juan Gabriel González Serna
-blanca.vargas@cenidet.edu.mx/blanca.vg@gmail.com, gabriel@cenidet.edu.mx
-Department of Computer Science.
-National Center for Research and Technological Development CENIDET, México
+MovieLens data sets were collected by the GroupLens Research Project
+at the University of Minnesota.
+ 
+This data set consists of:
+	* 100,000 ratings (1-5) from 943 users on 1682 movies. 
+	* Each user has rated at least 20 movies. 
+        * Simple demographic info for the users (age, gender, occupation, zip)
 
-3. Past Usage:
-    (a) Blanca Vargas-Govea, Juan Gabriel González-Serna, Rafael Ponce-Medellín. Effects of relevant contextual features in the performance of a restaurant recommender system. In RecSys’11: Workshop on Context Aware Recommender Systems (CARS-2011), Chicago, IL, USA, October 23, 2011.
-    (b) The task was to generate a top-n list of restaurants according to the consumer preferences. Finding the significant features was another addressed problem.
-4. Relevant Information.
-Two approaches were tested: a collaborative filter technique and a contextual approach.
-   (i) The collaborative filter technique used only one file i.e., rating_final.csv that comprises the user, item and rating attributes. 
-   (ii) The contextual approach generated the recommendations using the remaining eight data files.
+The data was collected through the MovieLens web site
+(movielens.umn.edu) during the seven-month period from September 19th, 
+1997 through April 22nd, 1998. This data has been cleaned up - users
+who had less than 20 ratings or did not have complete demographic
+information were removed from this data set. Detailed descriptions of
+the data file can be found at the end of this file.
+
+Neither the University of Minnesota nor any of the researchers
+involved can guarantee the correctness of the data, its suitability
+for any particular purpose, or the validity of results based on the
+use of the data set.  The data set may be used for any research
+purposes under the following conditions:
+
+     * The user may not state or imply any endorsement from the
+       University of Minnesota or the GroupLens Research Group.
+
+     * The user must acknowledge the use of the data set in
+       publications resulting from the use of the data set
+       (see below for citation information).
+
+     * The user may not redistribute the data without separate
+       permission.
+
+     * The user may not use this information for any commercial or
+       revenue-bearing purposes without first obtaining permission
+       from a faculty member of the GroupLens Research Project at the
+       University of Minnesota.
+
+If you have any further questions or comments, please contact GroupLens
+<grouplens-info@cs.umn.edu>. 
+
+CITATION
+==============================================
+
+To acknowledge use of the dataset in publications, please cite the 
+following paper:
+
+F. Maxwell Harper and Joseph A. Konstan. 2015. The MovieLens Datasets:
+History and Context. ACM Transactions on Interactive Intelligent
+Systems (TiiS) 5, 4, Article 19 (December 2015), 19 pages.
+DOI=http://dx.doi.org/10.1145/2827872
 
 
-5. Files, instances and attributes
-Number of Files: 9
+ACKNOWLEDGEMENTS
+==============================================
 
-Restaurants
-1 chefmozaccepts.csv
-2 chefmozcuisine.csv
-3 chefmozhours4.csv
-4 chefmozparking.csv
-5 geoplaces2.csv
+Thanks to Al Borchers for cleaning up this data and writing the
+accompanying scripts.
 
-Consumers
-6 usercuisine.csv
-7 userpayment.csv
-8 userprofile.csv
+PUBLISHED WORK THAT HAS USED THIS DATASET
+==============================================
 
-User-Item-Rating
-9 rating_final.csv
+Herlocker, J., Konstan, J., Borchers, A., Riedl, J.. An Algorithmic
+Framework for Performing Collaborative Filtering. Proceedings of the
+1999 Conference on Research and Development in Information
+Retrieval. Aug. 1999.
 
-%--- Description format
-File name
-Number of instances
-Number of attributes
-attribute: Type, Number of missing values (if any), Number of values [list of values]
-%--- 
+FURTHER INFORMATION ABOUT THE GROUPLENS RESEARCH PROJECT
+==============================================
 
-1 chefmozaccepts.csv
-Instances: 1314
-Attributes: 2
-placeID: Nominal
-Rpayment: Nominal, 12 [cash,VISA,MasterCard-Eurocard,American_Express,bank_debit_cards,checks,Discover,Carte_Blanche,Diners_Club,Visa,Japan_Credit_Bureau,gift_certificates]
-%---
-2 chefmozcuisine.csv
-Instances: 916
-Attributes: 2
-placeID: Nominal
-Rcuisine: Nominal, 59 [Afghan,African,American,Armenian,Asian,Bagels,Bakery,Bar,Bar_Pub_Brewery,Barbecue,Brazilian,Breakfast-Brunch,Burgers,Cafe-Coffee_Shop,			Cafeteria,California,Caribbean,Chinese,Contemporary,Continental-European,Deli-Sandwiches,Dessert-Ice_Cream,Diner,Dutch-Belgian,Eastern_European,Ethiopian,Family,Fast_Food,Fine_Dining,French,,Game,German,Greek,Hot_Dogs,			International,Italian,Japanese,Juice,Korean,Latin_American,Mediterranean,Mexican,Mongolian,Organic-Healthy,Persian,			Pizzeria,Polish,Regional,Seafood,Soup,Southern,Southwestern,Spanish,Steaks,Sushi,Thai,Turkish,Vegetarian,Vietnamese]
-%---
-3 chefmozhours4.csv
-Instances: 2339
-Attributes: 3
-placeID: Nominal
-hours: Nominal, Range:00:00-23:30
-days:Nominal, 7 [Mon;Tue;Wed;Thu;Fri;Sat;Sun]
-%---
-4 chefmozparking.csv
-Instances: 702
-Attributes: 2
-placeID: Nominal
-parking_lot:Nominal, 7[public,none,yes,valet_parking,free,street,validated_parking]
-%---
-5 geoplaces2.csv
-Instances: 130
-Attributes: 21
-placeID: Nominal
-latitude: Numeric
-longitude: Numeric
-the_geom_meter: Nominal (Geospatial)
-name: Nominal
-address: Nominal,Missing: 27
-city: Nominal, Missing: 18
-state: Nominal, Missing: 18
-country: Nominal, Missing: 28
-fax: Numeric, Missing: 130
-zip: Nominal,Missing: 74
-alcohol: Nominal, Values: 3 [No_Alcohol_Served,Wine_Beer,Full_Bar]
-smoking_area: Nominal, 5 [none,only_at_bar,permitted,section,not_permitted]
-dress_code:	Nominal, 3 [informal,casual,formal]
-accessibility: Nominal, 3 [no_accessibility,completely,partially]
-price: Nominal, 3 [medium,low,high]
-url: Nominal, Missing: 116
-Rambience: Nominal, 2 [familiar,quiet]
-franchise: Nominal, 2 [t,f]
-area: Nominal, 2 [open,closed]
-other_services:	Nominal, 3 [none,internet,variety]
-%---
-6 rating_final.csv
-Instances: 1161
-Attributes: 5
-userID: Nominal
-placeID: Nominal
-rating: Numeric, 3 [0,1,2]
-food_rating: Numeric, 3 [0,1,2]
-service_rating:	Numeric, 3 [0,1,2]
-%---
-7 usercuisine.csv
-Instances: 330
-Attributes: 2
-userID: Nominal
-Rcuisine: Nominal, 103 [Afghan,African,American,Armenian,Asian,Australian,Austrian,Bagels,Bakery,Bar,Bar_Pub_Brewery,Barbecue,Basque,Brazilian,Breakfast-Brunch,British,Burgers,Burmese,Cafe-Coffee_Shop,Cafeteria,Cajun-Creole,California,Cambodian,Canadian,Caribbean,Chilean,Chinese,Contemporary,Continental-European,Cuban,Deli-Sandwiches,Dessert-Ice_Cream,Dim_Sum,Diner,Doughnuts,Dutch-Belgian,Eastern_European,Eclectic,Ethiopian,Family,Fast_Food,Filipino,Fine_Dining,French,Fusion,Game,German,Greek,Hawaiian,Hot_Dogs,Hungarian,Indian-Pakistani,Indigenous,Indonesian,International,Irish,Israeli,Italian,Jamaican,Japanese,Juice,Korean,Kosher,Latin_American,Lebanese,Malaysian,Mediterranean,Mexican,Middle_Eastern,Mongolian,Moroccan,North_African,Organic-Healthy,Pacific_Northwest,Pacific_Rim,Persian,Peruvian,Pizzeria,Polish,Polynesian,Portuguese,Regional,Romanian,Russian-Ukrainian,Scandinavian,Seafood,Soup,Southeast_Asian,Southern,Southwestern,Spanish,Steaks,Sushi,Swiss,Tapas,Tea_House,Tex-Mex,Thai,Tibetan,Tunisian,Turkish,Vegetarian,Vietnamese]
-%---
-8 userpayment.csv
-Instances: 177
-Attributes: 2
-userID: Nominal
-Upayment: Nominal, 5 [cash,bank_debit_cards,MasterCard-Eurocard,VISA,American_Express]
-%---
-9 userprofile
-Instances: 138
-Attributes: 19
-userID: Nominal
-latitude: Numeric
-longitude: Numeric
-the_geom_meter: Nominal (Geospatial)
-smoker: Nominal, Missing: 3, 2 [false,true]
-drink_level: Nominal, 3 [abstemious,social drinker,casual drinker]
-dress_preference:Nominal, Missing: 5, 4 [informal,formal,no preference,elegant]
-ambience: Nominal, Missing: 6, 3 [family,friends,solitary]
-transport: Nominal, Missing: 7, 3 [on foot,public,car owner]
-marital_status:	Nominal, Missing: 4, 3 [single,married,widow]
-hijos: Nominal, Missing: 11, 3 [independent,kids,dependent]
-birth_year:	Nominal
-interest: Nominal, 5 [variety,technology,none,retro,eco-friendly]
-personality: Nominal, 4 [thrifty-protector,hunter-ostentatious,hard-worker,conformist]
-religion: Nominal, 5 [none,Catholic,Christian,Mormon,Jewish]
-activity: Nominal, Missing: 7, 4 [student,professional,unemployed,working-class]
-color: Nominal, 8 [black,red,blue,green,purple,orange,yellow,white]
-weight: Numeric
-budget: Nominal, Missing: 7, 3 [medium,low,high]
-height: Numeric
-%---
+The GroupLens Research Project is a research group in the Department
+of Computer Science and Engineering at the University of Minnesota.
+Members of the GroupLens Research Project are involved in many
+research projects related to the fields of information filtering,
+collaborative filtering, and recommender systems. The project is lead
+by professors John Riedl and Joseph Konstan. The project began to
+explore automated collaborative filtering in 1992, but is most well
+known for its world wide trial of an automated collaborative filtering
+system for Usenet news in 1996.  The technology developed in the
+Usenet trial formed the base for the formation of Net Perceptions,
+Inc., which was founded by members of GroupLens Research. Since then
+the project has expanded its scope to research overall information
+filtering solutions, integrating in content-based methods as well as
+improving current collaborative filtering technology.
+
+Further information on the GroupLens Research project, including
+research publications, can be found at the following web site:
+        
+        http://www.grouplens.org/
+
+GroupLens Research currently operates a movie recommender based on
+collaborative filtering:
+
+        http://www.movielens.org/
+
+DETAILED DESCRIPTIONS OF DATA FILES
+==============================================
+
+Here are brief descriptions of the data.
+
+ml-data.tar.gz   -- Compressed tar file.  To rebuild the u data files do this:
+                gunzip ml-data.tar.gz
+                tar xvf ml-data.tar
+                mku.sh
+
+u.data     -- The full u data set, 100000 ratings by 943 users on 1682 items.
+              Each user has rated at least 20 movies.  Users and items are
+              numbered consecutively from 1.  The data is randomly
+              ordered. This is a tab separated list of 
+	         user id | item id | rating | timestamp. 
+              The time stamps are unix seconds since 1/1/1970 UTC   
+
+u.info     -- The number of users, items, and ratings in the u data set.
+
+u.item     -- Information about the items (movies); this is a tab separated
+              list of
+              movie id | movie title | release date | video release date |
+              IMDb URL | unknown | Action | Adventure | Animation |
+              Children's | Comedy | Crime | Documentary | Drama | Fantasy |
+              Film-Noir | Horror | Musical | Mystery | Romance | Sci-Fi |
+              Thriller | War | Western |
+              The last 19 fields are the genres, a 1 indicates the movie
+              is of that genre, a 0 indicates it is not; movies can be in
+              several genres at once.
+              The movie ids are the ones used in the u.data data set.
+
+u.genre    -- A list of the genres.
+
+u.user     -- Demographic information about the users; this is a tab
+              separated list of
+              user id | age | gender | occupation | zip code
+              The user ids are the ones used in the u.data data set.
+
+u.occupation -- A list of the occupations.
+
+u1.base    -- The data sets u1.base and u1.test through u5.base and u5.test
+u1.test       are 80%/20% splits of the u data into training and test data.
+u2.base       Each of u1, ..., u5 have disjoint test sets; this if for
+u2.test       5 fold cross validation (where you repeat your experiment
+u3.base       with each training and test set and average the results).
+u3.test       These data sets can be generated from u.data by mku.sh.
+u4.base
+u4.test
+u5.base
+u5.test
+
+ua.base    -- The data sets ua.base, ua.test, ub.base, and ub.test
+ua.test       split the u data into a training set and a test set with
+ub.base       exactly 10 ratings per user in the test set.  The sets
+ub.test       ua.test and ub.test are disjoint.  These data sets can
+              be generated from u.data by mku.sh.
+
+allbut.pl  -- The script that generates training and test sets where
+              all but n of a users ratings are in the training data.
+
+mku.sh     -- A shell script to generate all the u data sets from u.data.
