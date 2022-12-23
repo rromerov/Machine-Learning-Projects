@@ -1,6 +1,6 @@
 # First Project 
 ## K-Means
-In this project I'll be using Target locations to find the best places for distribution centers, the project can be seen [here](/K-Means/main.ipynb)
+In this project I'll be using **Target locations** to find the best places for distribution centers, the project can be seen [here](/K-Means/main.ipynb)
 
 # Second Project
 ## Decision Tree and Random Forest
